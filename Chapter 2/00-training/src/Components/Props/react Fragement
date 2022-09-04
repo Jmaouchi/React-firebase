@@ -1,0 +1,2 @@
+a react fragement is an empty tag and the perpose of it is to render a JSX instead of html in template without a div or another tag.
+you can also use react.fragement as a wrapper while using a loop or whatever
