@@ -19,13 +19,17 @@ function Boolean() {
 
   return (
     <div className='app'>
+      {showEvents && (
       <div>
-        <button onClick={()=> setShowEvents(false)}>Show</button>
+        <button onClick={()=> setShowEvents(false)}>Hide Content</button>
       </div>
+      )}
+      {!showEvents && (
       <div>
-        <button onClick={()=> setShowEvents(true)}>Hide</button>
+        <button onClick={()=> setShowEvents(true)}>Show Content</button>
       </div>
-      {!showEvents && events.map((event, index) => (
+      )}
+      {showEvents && events.map((event, index) => (
       <div key={event.id}>
         <h2>{index}- {event.title}</h2>
         <button onClick={() => handleClick(event.id)}>Delete event</button>
