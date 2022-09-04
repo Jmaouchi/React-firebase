@@ -1,1 +1,2 @@
-react component is much like a javascript function
+- React component is much like a javascript function 
+- Always make sure to add a key value while using a map method  
