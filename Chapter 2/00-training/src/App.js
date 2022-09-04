@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UseStateToDelete from './Components/UseStateToDelete/UseStateToDelete'
@@ -8,6 +8,12 @@ import Modal from './Components/Modal/Modal';
 
 function App() {
   const title = 'Hello There'
+  const [showModal, setShowModal] = useState(true)
+
+  const handleClose = () =>{
+    setShowModal(false)
+  }
+
   return (
     <Router>
     <div className="App">
@@ -18,10 +24,12 @@ function App() {
 
       {/* using props exmpl */}
       <Props title={title} name='jugurta'></Props>
-      <Modal>
+      {showModal && (
+      <Modal handleClose={handleClose}>
         <h2>10% off coupon code</h2>
         <p>Use the code Ninja jay</p>
       </Modal>
+      )}
     </div>
     </Router>
   );
